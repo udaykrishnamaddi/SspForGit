@@ -5,7 +5,7 @@ const UserDetailsComponent = () => {
     <div className='m-8 w-full' style={{ display: 'flex', flexDirection: 'column',  }}>
       {/* Full-width container */}
       <br/>
-      <h3 className=' text-3xl font-bold text-center text-left mb-8'>About Me</h3>
+      <h3 className=' text-3xl font-bold text-center text-left mb-8'>My details</h3>
       <div className=" p-6 hover:scale-105 transition duration-500 cursor-pointer object-cover m-3 p-2 shadow-2xl rounded-2xl relative">
         {/* row1 */}
         <div className="mb-4">
