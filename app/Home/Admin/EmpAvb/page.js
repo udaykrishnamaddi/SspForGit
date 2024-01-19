@@ -45,7 +45,7 @@ const page = () => {
           className="pl-3 mx-4 bg-blue-600 border-2 shadow-md rounded-md cursor-pointer sm:w-[30vw] md:w-[15vw] h-[6vh] mt-4"
           onClick={(e) => togglefilter(e)}
         >
-          Filter
+          Filter chey bro
         </button>
         {filter && (
           <form className="absolute z-20 top-15 left-10 rounded-xl sm:w-[200px] md:w-[370px] bg-gray-800 text-white">
