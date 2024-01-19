@@ -55,7 +55,7 @@ const Navbar = () => {
     
 
     
-    <nav className="bg-gray-800 p-4 sticky top-0 z-50">
+    <nav className="bg-[#274e7f] p-4 sticky top-0 z-50">
       <div className="container relative mx-auto flex justify-between items-center">
         {/* Menu Toggle for small screens */}
         <div className="md:hidden" >
@@ -72,7 +72,11 @@ const Navbar = () => {
         <div className="w-1/4 flex justify-around items-center">
           <div className="hidden md:flex space-x-4">
             <Link legacyBehavior href="/Home">
-              <a className="text-white">Home</a>
+              <a className="group text-white  transition-all duration-300 ease-in-out">
+              <span class="bg-left-bottom bg-gradient-to-r from-[#4fbfa8] to-[#4fbfa8] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+                  Home
+                </span>
+              </a>
             </Link>
 
             <Link legacyBehavior href="#" >
@@ -82,7 +86,11 @@ const Navbar = () => {
                 ref={r1}
               >
                 <div className="flex">
-                <h1>Services </h1>
+                <a className="group text-white  transition-all duration-300 ease-in-out">
+                  <span class="bg-left-bottom bg-gradient-to-r from-[#4fbfa8] to-[#4fbfa8] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+                      Services
+                    </span>
+                </a>
                 <svg
                   className={`w-3 h-3 mt-2 ml-1 transform ${services ? 'rotate-180' : 'rotate-0'} transition-transform`}
                   fill="none"
@@ -96,7 +104,7 @@ const Navbar = () => {
                 </div>
                 {services && (
                   
-                  <div className="origin-top-left absolute -left-10 mt-2 w-28 md:w-[11.5rem] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 ">
+                  <div className="origin-top-left absolute -left-10 mt-2 w-28 md:w-[12.5rem] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 ">
                     <div
                       className="py-1"
                       role="menu"
