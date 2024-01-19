@@ -15,7 +15,7 @@ import {
 import { Button } from "@nextui-org/react";
 
 const Home = () => {
-  const [user,setUser]=useState("user");
+  const [user,setUser]=useState("Admin");
   const disp=useAppDispatch();
   disp(roleAssign(user))
 
