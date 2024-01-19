@@ -8,7 +8,7 @@ import {useAppSelector} from "../Redux/hooks"
 
 const Navbar = () => {
 
-  
+  const [isAnimated, setIsAnimated] = useState(false);
 
   // const [role,setRole] = useState("Admin");
   // const [userRole, setuserRole] = useState("Admin");
@@ -48,6 +48,7 @@ const Navbar = () => {
       setProfile(!profile)
     }
     setServices(!services);
+    // onClick={() => { setIsAnimated(!isAnimated);}}
   };
 
   return (
@@ -64,24 +65,38 @@ const Navbar = () => {
         {/* Brand Logo */}
         <div className="w-1/2 flex items-center">
           <Link legacyBehavior href="/Home">
-            <a className="text-white text-2xl font-serif font-bold">Im-Par</a>
+            <a className="text-white text-2xl font-sans font-bold">Im-Par</a>
           </Link>
         </div>
-
+        
         <div className="w-1/4 flex justify-around items-center">
           <div className="hidden md:flex space-x-4">
             <Link legacyBehavior href="/Home">
               <a className="text-white">Home</a>
             </Link>
-            <Link legacyBehavior href="#">
+
+            <Link legacyBehavior href="#" >
               <a
                 className="text-white relative"
                 onClick={toggleServices}
                 ref={r1}
               >
-                Services &raquo;
+                <div className="flex">
+                <h1>Services </h1>
+                <svg
+                  className={`w-3 h-3 mt-2 ml-1 transform ${services ? 'rotate-180' : 'rotate-0'} transition-transform`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                </svg>
+                  
+                </div>
                 {services && (
-                  <div className="origin-top-left absolute -left-10 mt-2 w-28 md:w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                  
+                  <div className="origin-top-left absolute -left-10 mt-2 w-28 md:w-[11.5rem] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 ">
                     <div
                       className="py-1"
                       role="menu"
@@ -91,7 +106,7 @@ const Navbar = () => {
                       <Link legacyBehavior href="/Home/Services/VacationManagement">
                       <a
                        
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        className="rounded-xl m-1 block px-4 py-2 hover:font-bold text-sm text-gray-700 hover:bg-gray-100 hover:text-[#274E75] "
                         role="menuitem"
                       >
                         Leave Management
@@ -103,7 +118,7 @@ const Navbar = () => {
                         <Link legacyBehavior href="/Home/Services/Service2/EmpManag/EmpList">
                         <a
                          
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                          className="rounded-xl m-1 block px-4 py-2 hover:font-bold text-sm text-gray-700 hover:bg-gray-100 hover:text-[#274E75]"
                           role="menuitem"
                         >
                           Employee Management
@@ -115,7 +130,7 @@ const Navbar = () => {
                         <Link legacyBehavior href="/Home/Services/Service2/MyTeam/MyTeamList">
                         <a
                          
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                          className="rounded-xl m-1 block px-4 py-2 hover:font-bold text-sm text-gray-700 hover:bg-gray-100 hover:text-[#274E75]"
                           role="menuitem"
                         >
                           My Functional Team
@@ -172,7 +187,7 @@ const Navbar = () => {
                     >
                       <Link legacyBehavior href="/Home/Profile/ChangePassword">
                       <a  
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        className="rounded-xl m-1 block px-4 py-2 hover:font-bold text-sm text-gray-700 hover:bg-gray-100 hover:text-[#274E75]"
                         role="menuitem"
                       >
                         Change Password
@@ -181,10 +196,10 @@ const Navbar = () => {
                       <Link legacyBehavior href="/">
                       <a
                       
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                        className="rounded-xl m-1 block px-4 py-2 hover:font-bold text-sm text-gray-700 hover:bg-gray-100 hover:text-[#274E75]"
                         role="menuitem"
                       >
-                        LogOut
+                        Log Out
                       </a>
                       </Link>
                     </div>

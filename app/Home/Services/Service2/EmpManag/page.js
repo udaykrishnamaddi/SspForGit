@@ -49,7 +49,7 @@ export default function page() {
   return (
     <div>
       
-      <button onClick={()=>handleAddNew()} className="pl-3 mx-4 border border-2 shadow-md rounded-md cursor-pointer sm:w-[30vw] md:w-[15vw] h-[6vh] mt-4">Add New
+      <button onClick={()=>handleAddNew()} className="pl-3 mx-4 border-2 shadow-md rounded-md cursor-pointer sm:w-[30vw] md:w-[15vw] h-[6vh] mt-4">Add New
       <span><FontAwesomeIcon icon={faPlus} size="lg" className="mx-4"/></span></button>
       {
         updopen? (
