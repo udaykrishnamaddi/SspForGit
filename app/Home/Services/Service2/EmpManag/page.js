@@ -5,12 +5,12 @@ import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Paginat
 import {employees} from "./data";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
-import useWindowSize from "../../../customHooks/useWindownSize";
+
 import Updatemodal from "./UpdateModal";
 import Addnewmodal from "./Addnewmodal";
 
 export default function page() {
-  const UWS= useWindowSize()  
+  // const UWS= useWindowSize()  
   const [page, setPage] = React.useState(1);
   const rowsPerPage = 5;
 

@@ -23,10 +23,10 @@ const Sidebar = ({ showSidebar,setShowSidebar }) => {
   const getUpdatedNavItems = () => {
     if (user === "Admin") {
       return AdminSideNavItems;
-    } else if (user === "Manager") {
-      return ManagerSideNavItems;
+    // } else if (user === "Manager") {
+    //   return ManagerSideNavItems;
     } else {
-      return userSideNavItems;
+      return ManagerSideNavItems;
     }
   };
 

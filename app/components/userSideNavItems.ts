@@ -1,3 +1,4 @@
+// 
 import React from "react";
 import {
   CalendarIcon,
@@ -7,15 +8,26 @@ import {
 } from "@heroicons/react/24/outline";
 import { SideNavItem } from "./SideNavItem";
 
-export const userSideNavItems: SideNavItem[] = [
+export const ManagerSideNavItems: SideNavItem[] = [
   {
-    label: "My Team",
-    path : "/Home/Admin/MyTeam",
-    image : "/MyTeamSideIcons/focus-group.png"
+    label: "My Team List",
+    path : "/Home/Services/Servie2/MyTeam/MyTeamList",
+    image : "/AdminSidebarIcons/team.png",
   },
+  // {
+    // label: "Asset Management",
+    // path : "/Home/Admin/AsstMng",
+    // subMenuItems:[
+    //   {label:"Emp list",path:"#"},
+    //   {label:"Add Emp",path:"#"},
+    //   {label:"Del Emp",path:"#"},
+    //   {label:"Update Emp",path:"#"},
+    // ],
+    // image : "/AdminSidebarIcons/assets.png",
+  // },
   {
-    label: "Emp Availability",
-    path : "/Home/Admin/EmpAvb",
-    image : "/AdminSidebarIcons/availability.png"
+    label: "My Team Availability",
+    path : "/Home/Services/Service2/MyTeam/MyTeamAvb",
+    image : "/AdminSidebarIcons/availability.png",
   },
 ];

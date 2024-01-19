@@ -97,8 +97,33 @@ const Navbar = () => {
                         Leave Management
                       </a>
                       </Link>
+
+                      {(role == "Admin" || role == "Manager")?
+                      (
+                        <Link legacyBehavior href="/Home/Services/Service2/EmpManag/EmpList">
+                        <a
+                         
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                          role="menuitem"
+                        >
+                          Employee Management
+                        </a>
+                        </Link>
+                      )
+                  
+                      :(
+                        <Link legacyBehavior href="/Home/Services/Service2/MyTeam/MyTeamList">
+                        <a
+                         
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                          role="menuitem"
+                        >
+                          My Functional Team
+                        </a>
+                        </Link>
+                      )
                       
-                      
+                    }
                       {/* <a
                         href="#"
                         className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
@@ -117,7 +142,7 @@ const Navbar = () => {
                 <a  className="text-white">{userRole}</a>
               </Link>
             )} */}
-            {role=="Admin" ? (
+            {/* {role=="Admin" ? (
               <Link legacyBehavior href="/Home/Admin/EmpManag">
                 <a  className="text-white">{role}</a>
               </Link>
@@ -125,7 +150,7 @@ const Navbar = () => {
               <Link legacyBehavior href="/Home/Admin/MyTeam">
                 <a  className="text-white">My Team</a>
               </Link>
-            )}
+            )} */}
           </div>
 
           {/* Profile Image */}

@@ -9,19 +9,19 @@ import { SideNavItem } from "./SideNavItem";
 
 export const AdminSideNavItems: SideNavItem[] = [
   {
-    label: "Emp Management",
-    path : "/Home/Admin/EmpManag",
+    label: "Employee List",
+    path : "/Home/Services/Service2/EmpManag/EmpList",
     image : "/AdminSidebarIcons/team.png",
     
   },
+  // {
+  //   label: "Asset Management",
+  //   path : "/Home/Admin/AsstMng",
+  //   image : "/AdminSidebarIcons/assets.png",
+  // },
   {
-    label: "Asset Management",
-    path : "/Home/Admin/AsstMng",
-    image : "/AdminSidebarIcons/assets.png",
-  },
-  {
-    label: "Emp Availability",
-    path : "/Home/Admin/EmpAvb",
+    label: "Employee Availability",
+    path : "/Home/Services/Service2/EmpManag/EmpAvb",
     image : "/AdminSidebarIcons/availability.png",
   },
 ];

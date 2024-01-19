@@ -9,24 +9,24 @@ import { SideNavItem } from "./SideNavItem";
 
 export const ManagerSideNavItems: SideNavItem[] = [
   {
-    label: "My Team",
-    path : "/Home/Admin/MyTeam",
+    label: "My Team List",
+    path : "/Home/Services/Service2/MyTeam/MyTeamList",
     image : "/AdminSidebarIcons/team.png",
   },
-  {
-    label: "Asset Management",
-    path : "/Home/Admin/AsstMng",
+  // {
+    // label: "Asset Management",
+    // path : "/Home/Admin/AsstMng",
     // subMenuItems:[
     //   {label:"Emp list",path:"#"},
     //   {label:"Add Emp",path:"#"},
     //   {label:"Del Emp",path:"#"},
     //   {label:"Update Emp",path:"#"},
     // ],
-    image : "/AdminSidebarIcons/assets.png",
-  },
+    // image : "/AdminSidebarIcons/assets.png",
+  // },
   {
-    label: "Emp Availability",
-    path : "/Home/Admin/EmpAvb",
+    label: "My Team Availability",
+    path : "/Home/Services/Service2/MyTeam/MyTeamAvb",
     image : "/AdminSidebarIcons/availability.png",
   },
 ];
