@@ -24,10 +24,10 @@ const Home = () => {
       <div className="grid sm:grid-cols-2">
         <div className="m-4 flex items-center justify-center">
           <div>
-            <p className="text-green-700 sm:text-4xl lg:text-5xl text-2xl">
+            <p className="text-green-700 sm:text-4xl font-sans lg:text-5xl text-2xl">
               Hi Mohan Krishna!
             </p>
-            <p className="sm:text-2xl lg:text-3xl text-xl">
+            <p className="sm:text-2xl lg:text-3xl text-xl font-sans">
               Welcome to Im-par Self Service Portal
             </p>
           </div>
@@ -56,7 +56,7 @@ const Home = () => {
                 width={40}
               />
               <div className="flex flex-row">
-                <p className="text-md">MyDetails</p>
+                <p className="text-md font-sans">MyDetails</p>
                 <Link href="/Home/Services/VacationManagement/UserLeaveDetails">
                 <Button className="hover:scale-110 transition duration-500 cursor-pointer object-cover absolute top-3 right-3">
                   <Image
@@ -71,7 +71,7 @@ const Home = () => {
             </CardHeader>
             <hr />
             <CardBody>
-              <p>
+              <p className="font-sans">
                 Discover my professional journey and leave balance at a glance
                 with a touch of personal flair.
               </p>
