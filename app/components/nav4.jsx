@@ -59,7 +59,7 @@ const Navbar = () => {
         <Nav3 />
       </div>
 
-      {/* Brand Logo */}
+    
       <div className="w-1/2 flex items-center">
         <Link legacyBehavior href="/Home">
         <a className="group text-white text-2xl  font-bold font-sans transition-all duration-300 ease-in-out">
