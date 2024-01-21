@@ -23,13 +23,14 @@ const Login = () => {
   };
 
   return (
-    <div>
-        <div className="min-h-screen bg-gray-100 text-gray-900 flex justify-center">
-        <div className="max-w-screen-xl m-0 sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
-            <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
+    <div className='bg-[#274e7f] h-full w-full'>
+    <div className='flex justify-center items-center bg-[url("/loginPageImages/loginbg.png")]  bg-cover h-screen g-center bg-repeat-y'>
+        <div className="w-[60%]  text-gray-900 flex justify-center">
+        <div className="sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
+            <div className="lg:w-1/2 xl:w-[45%] p-6 sm:p-2 mb-4">
                 <div>
                     <img src="/loginPageImages/WhatsApp Image 2024-01-10 at 11.05.13.jpeg"
-                        className="w-mx-auto" />
+                        className="w-mx-auto pt-4" />
                 </div>
                   <div className="mt-12 flex flex-col items-center">
                     <div className="w-full flex-1 mt-8">
@@ -59,17 +60,17 @@ const Login = () => {
                             <button
                                 className="mt-5 tracking-wide font-semibold bg-green-400 text-white-500 w-full py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                                   <span className="ml-">
-                                      Sign In to SSP
+                                      Log In
                                   </span>
                             </button>
                             </Link>
                             <p className="mt-6 text-xs text-gray-600 text-center">
                                 I agree to abide by Im-Par
-                                <a href="#" className="border-b border-gray-500 border-dotted">
+                                <a href="#" className="mx-1 border-b border-gray-500 border-dotted">
                                     Terms of Service 
                                 </a>
                                 and its
-                                <a href="#" className="border-b border-gray-500 border-dotted">
+                                <a href="#" className="ml-1 border-b border-gray-500 border-dotted">
                                     Privacy Policy
                                 </a>
                             </p>
@@ -77,14 +78,10 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex-1 bg-green-100 text-center hidden lg:flex">
-                <div className="m-12 xl:m-16 w-full bg-[url('https://drive.google.com/uc?export=view&id=1KZ_Ub_2lZ0dHbKV0fAIhxVhiQA183RCz')] bg-contain bg-center bg-no-repeat ">
-                </div>
-            </div>
         </div>
     </div>
     </div>
-   
+    </div>
   )
 };
 
