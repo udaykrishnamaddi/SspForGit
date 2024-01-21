@@ -8,6 +8,7 @@ export const ChevronDownIcon = ({strokeWidth = 1.5, ...otherProps}) => (
     role="presentation"
     viewBox="0 0 24 24"
     width="1em"
+    className="ml-1"
     {...otherProps}
   >
     <path

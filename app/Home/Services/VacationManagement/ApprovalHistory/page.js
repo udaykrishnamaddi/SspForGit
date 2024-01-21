@@ -1,9 +1,9 @@
-// import React from 'react'
+import React from 'react'
 
-// const page = () => {
-//   return (
-//     <div>Approval History page</div>
-//   )
-// }
+const page = () => {
+  return (
+    <div>Approval History page</div>
+  )
+}
 
-// export default page
+export default page

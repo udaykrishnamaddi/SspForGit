@@ -24,6 +24,12 @@ const Sidebar = ({ showSidebar,setShowSidebar, navItems = defaultNavItems }) => 
           path: '/Home/Services/VacationManagement/PendingApprovals',
           image : "/SideBarIcons/wall-clock.png"
         },
+        {
+          label: 'Approval History',
+          path: '/Home/Services/VacationManagement/ApprovalHistory',
+          image : "/SideBarIcons/wall-clock.png"
+        }
+
       ]
     : navItems;
   return (
