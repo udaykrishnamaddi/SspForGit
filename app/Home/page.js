@@ -33,7 +33,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="flex-end mr-14">
+        <div className="flex-end mr-14 mt-5">
           <Image src="/homeImages/homeimagenew.png" width={300} height={300} alt="" />
         </div>
       </div>

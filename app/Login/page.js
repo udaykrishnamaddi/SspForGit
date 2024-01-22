@@ -26,7 +26,7 @@ const Login = () => {
     <div className='bg-[#274e7f] h-full w-full'>
     <div className='flex justify-center items-center  bg-cover h-screen g-center bg-repeat-y'>
         <div className="w-[60%]  text-gray-900 flex justify-center">
-        <div className="sm:m-6 bg-white shadow sm:rounded-lg flex justify-center flex-1">
+        <div className="sm:m-6 bg-white shadow sm:rounded-3xl flex justify-center flex-1">
             <div className="lg:w-1/2 xl:w-[45%] p-6 sm:p-2 mb-4">
                 <div>
                     <img src="/loginPageImages/WhatsApp Image 2024-01-10 at 11.05.13.jpeg"
@@ -58,8 +58,8 @@ const Login = () => {
 
                             <Link href="/Home">
                             <button
-                                className="mt-5 tracking-wide font-semibold bg-[#4fbfa8] text-white-500 w-full py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
-                                  <span className="ml-">
+                                className="mt-5 tracking-wide font-semibold bg-[#4fbfa8] text-white w-full py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                                  <span className="">
                                       Log In
                                   </span>
                             </button>
