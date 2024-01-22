@@ -9,7 +9,7 @@ import NavfSN from '../../../components/navfSN'
 const Layout = ({children}) => {
   const [showSidebar, setShowSidebar] = useState(false);
   return (
-    <div className="grid md:min-h-screen grid-rows-header bg-zinc-100">
+    <div className="grid md:h-full grid-rows-header">
       <div className="md:hidden bg-white shadow-sm z-10">
         <NavfSN onMenuButtonClick={() => setShowSidebar((prev) => !prev)} />
       </div>
