@@ -1,4 +1,6 @@
 import Login from "./Login/page"
+import dynamic from "next/dynamic";
+
 
 const page = () => {
   return (
@@ -19,3 +21,4 @@ const page = () => {
 }
 
 export default page
+

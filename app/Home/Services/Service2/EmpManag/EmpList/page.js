@@ -1,9 +1,9 @@
 "use client";
 
-import React, {useRef} from 'react';
-import { DownloadTableExcel } from 'react-export-table-to-excel';
-import { useDownloadExcel } from 'react-export-table-to-excel';
+import React, { useRef } from "react";
 
+import { useDownloadExcel } from "react-export-table-to-excel";
+import "./styles.css";
 
 import {
   Table,
@@ -38,7 +38,15 @@ const statusColorMap = {
   notactive: "danger",
 };
 
-const INITIAL_VISIBLE_COLUMNS = ["id","firstname","lastname", "country", "cityoffice", "role","actions"];
+const INITIAL_VISIBLE_COLUMNS = [
+  "id",
+  "firstname",
+  "lastname",
+  "country",
+  "cityoffice",
+  "role",
+  "actions",
+];
 
 export default function App() {
   const [filterValue, setFilterValue] = React.useState("");
@@ -107,7 +115,6 @@ export default function App() {
     const cellValue = user[columnKey];
 
     switch (columnKey) {
-      
       // case "role":
       //   return (
       //     <div className="flex flex-col">
@@ -131,7 +138,6 @@ export default function App() {
       case "actions":
         return (
           <div className="relative flex justify-end items-center gap-2">
-            
             <FontAwesomeIcon
               className="cursor-pointer"
               icon={faPen}
@@ -142,11 +148,7 @@ export default function App() {
           </div>
         );
       default:
-        return (
-          <div className='min-w-28'>
-            {cellValue}
-          </div>
-        );
+        return <div className="min-w-28">{cellValue}</div>;
     }
   }, []);
 
@@ -181,47 +183,41 @@ export default function App() {
     setPage(1);
   }, []);
 
-
-  
   const tableRef = useRef(null);
-// const handleExport = async () => {
-//   // Create a new workbook
-//   const workbook = new ExcelJS.Workbook();
+  // const handleExport = async () => {
+  //   // Create a new workbook
+  //   const workbook = new ExcelJS.Workbook();
 
-//   // Add a worksheet to the workbook
-//   const worksheet = workbook.addWorksheet('Sheet1');
+  //   // Add a worksheet to the workbook
+  //   const worksheet = workbook.addWorksheet('Sheet1');
 
-//   // Set the column headers in the worksheet
-//   headerColumns.forEach((column, index) => {
-//     worksheet.getColumn(index + 1).header = column.name;
-//     worksheet.getColumn(index + 1).width = 15; // Adjust the column width as needed
-//   });
+  //   // Set the column headers in the worksheet
+  //   headerColumns.forEach((column, index) => {
+  //     worksheet.getColumn(index + 1).header = column.name;
+  //     worksheet.getColumn(index + 1).width = 15; // Adjust the column width as needed
+  //   });
 
-//   // Add data rows to the worksheet
-//   filteredItems.forEach((item, rowIndex) => {
-//     headerColumns.forEach((column, columnIndex) => {
-//       worksheet.getCell(rowIndex + 2, columnIndex + 1).value = item[column.uid];
-//     });
-//   });
+  //   // Add data rows to the worksheet
+  //   filteredItems.forEach((item, rowIndex) => {
+  //     headerColumns.forEach((column, columnIndex) => {
+  //       worksheet.getCell(rowIndex + 2, columnIndex + 1).value = item[column.uid];
+  //     });
+  //   });
 
-//   // Save the workbook as an Excel file
-//   const buffer = await workbook.xlsx.writeBuffer();
-//   const excelBlob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-//   saveAs(excelBlob, 'exportedData.xlsx');
-// };
+  //   // Save the workbook as an Excel file
+  //   const buffer = await workbook.xlsx.writeBuffer();
+  //   const excelBlob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+  //   saveAs(excelBlob, 'exportedData.xlsx');
+  // };
 
-  
-
-  
-const { onDownload } = useDownloadExcel({
-  currentTableRef: tableRef.current,
-  filename: 'employees_data',
-  sheet: 'employee_table',
-  onExportEnd: (excelBlob) => {
-    saveAs(excelBlob, 'exportedData.xlsx');
-  }
-});
-
+  const { onDownload } = useDownloadExcel({
+    currentTableRef: tableRef.current,
+    filename: "employees_data",
+    sheet: "employee_table",
+    onExportEnd: (excelBlob) => {
+      saveAs(excelBlob, "exportedData.xlsx");
+    },
+  });
 
   const [isAddNewOPen, setIsAddNewOpen] = React.useState(false);
   const handleAddNew = () => {
@@ -244,84 +240,81 @@ const { onDownload } = useDownloadExcel({
           />
 
           <div className="flex gap-3 mr-7">
-            
-          <Dropdown>
-            <DropdownTrigger className="hidden sm:flex">
-              <Button
-                className='bg-blue-300 p-2'
-                endContent={<ChevronDownIcon />}
-                variant="flat"
-              >
-                Filter
-              </Button>
-            </DropdownTrigger>
-            <DropdownMenu
-              disallowEmptySelection
-              aria-label="Filter Options"
-              className="bg-gray-800 text-white"
-              closeOnSelect={false}
-              // Add three dropdown items with internal dropdowns
-            >
-              <DropdownItem>
-                {/* First Dropdown Item with internal dropdowns */}
-                <Dropdown>
+            <Dropdown>
               <DropdownTrigger className="hidden sm:flex">
                 <Button
-                  endContent={<ChevronDownIcon className="text-small" />}
+                  className="bg-blue-300 p-2"
+                  endContent={<ChevronDownIcon />}
                   variant="flat"
                 >
-                  Status
+                  Filter
                 </Button>
               </DropdownTrigger>
               <DropdownMenu
                 disallowEmptySelection
-                aria-label="Table Columns"
-                className="text-gray-800 bg-white"
+                aria-label="Filter Options"
+                className="bg-gray-800 text-white"
                 closeOnSelect={false}
-                selectedKeys={statusFilter}
-                selectionMode="multiple"
-                onSelectionChange={setStatusFilter}
+                // Add three dropdown items with internal dropdowns
               >
-                {statusOptions.map((status) => (
-                  <DropdownItem key={status.uid} className="capitalize">
-                    {capitalize(status.name)}
-                  </DropdownItem>
-                ))}
-              </DropdownMenu>
-            </Dropdown>
+                <DropdownItem>
+                  {/* First Dropdown Item with internal dropdowns */}
+                  <Dropdown>
+                    <DropdownTrigger className="hidden sm:flex">
+                      <Button
+                        endContent={<ChevronDownIcon className="text-small" />}
+                        variant="flat"
+                      >
+                        Status
+                      </Button>
+                    </DropdownTrigger>
+                    <DropdownMenu
+                      disallowEmptySelection
+                      aria-label="Table Columns"
+                      className="text-gray-800 bg-white"
+                      closeOnSelect={false}
+                      selectedKeys={statusFilter}
+                      selectionMode="multiple"
+                      onSelectionChange={setStatusFilter}
+                    >
+                      {statusOptions.map((status) => (
+                        <DropdownItem key={status.uid} className="capitalize">
+                          {capitalize(status.name)}
+                        </DropdownItem>
+                      ))}
+                    </DropdownMenu>
+                  </Dropdown>
+                </DropdownItem>
+                <DropdownItem>
+                  {/* Second Dropdown Item with internal dropdowns */}
 
-              </DropdownItem>
-              <DropdownItem>
-                {/* Second Dropdown Item with internal dropdowns */}
-                
-                <Dropdown>
-              <DropdownTrigger className="hidden sm:flex">
-                <Button
-                  endContent={<ChevronDownIcon className="text-small" />}
-                  variant="flat"
-                >
-                  Columns
-                </Button>
-              </DropdownTrigger>
-              <DropdownMenu
-                disallowEmptySelection
-                aria-label="Table Columns"
-                className="text-gray-800 bg-white"
-                closeOnSelect={false}
-                selectedKeys={visibleColumns}
-                selectionMode="multiple"
-                onSelectionChange={setVisibleColumns}
-              >
-                {columns.map((column) => (
-                  <DropdownItem key={column.uid} className="capitalize">
-                    {capitalize(column.name)}
-                  </DropdownItem>
-                ))}
-              </DropdownMenu>
-            </Dropdown>
-
-              </DropdownItem>
-              {/* <DropdownItem>
+                  <Dropdown>
+                    <DropdownTrigger className="hidden sm:flex">
+                      <Button
+                        endContent={<ChevronDownIcon className="text-small" />}
+                        variant="flat"
+                      >
+                        Columns
+                      </Button>
+                    </DropdownTrigger>
+                    <DropdownMenu
+                      disallowEmptySelection
+                      aria-label="Table Columns"
+                      className=" bg-gray-400 max-h-[200px] overflow-y-auto"
+                      closeOnSelect={false}
+                      selectedKeys={visibleColumns}
+                      selectionMode="multiple"
+                      onSelectionChange={setVisibleColumns}
+                    >
+                      {columns.map((column) => (
+                        <DropdownItem key={column.uid} className="capitalize">
+                          {capitalize(column.name)}
+                        </DropdownItem>
+                      ))}
+                    </DropdownMenu>
+                  </Dropdown>
+                </DropdownItem>
+                {/* <DropdownItem>
                 
 
 
@@ -348,10 +341,8 @@ const { onDownload } = useDownloadExcel({
 
 
               </DropdownItem> */}
-
-            </DropdownMenu>
-          </Dropdown>
-
+              </DropdownMenu>
+            </Dropdown>
 
             {/* <Dropdown>
               <DropdownTrigger className="hidden sm:flex">
@@ -405,8 +396,6 @@ const { onDownload } = useDownloadExcel({
               </DropdownMenu>
             </Dropdown> */}
 
-            
-
             <Button
               color="primary"
               className="bg-blue-300 ml-3 p-2 rounded-sm shadow-sm"
@@ -415,7 +404,6 @@ const { onDownload } = useDownloadExcel({
             >
               Export
             </Button>
-            
           </div>
         </div>
       </div>
@@ -430,23 +418,70 @@ const { onDownload } = useDownloadExcel({
     hasSearchFilter,
   ]);
 
+  // const bottomContent = React.useMemo(() => {
+  //   return (
+  //     <div className="relative flex">
+  //       <div className="py-2 px-2 w-[56%] flex justify-end">
+  //         <Pagination
+  //           isCompact
+  //           showControls
+  //           showShadow
+            
+  //           color="secondary"
+  //           page={page}
+  //           size="sm"
+  //           total={pages}
+  //           onChange={setPage}
+  //         />
+  //       </div>
+  //       <div className="hidden w-[40%] sm:flex justify-end gap-2 mr-10">
+  //         <Button
+  //           isDisabled={pages === 1}
+  //           size="sm"
+  //           variant="flat"
+  //           onPress={onPreviousPage}
+  //         >
+  //           Previous
+  //         </Button>
+  //         <Button
+  //           isDisabled={pages === 1}
+  //           size="sm"
+  //           variant="flat"
+  //           onPress={onNextPage}
+  //         >
+  //           Next
+  //         </Button>
+  //       </div>
+  //     </div>
+  //   );
+  // }, [selectedKeys, items.length, page, pages, hasSearchFilter]);
+
   const bottomContent = React.useMemo(() => {
     return (
       <div className="relative flex">
-        <div className="py-2 px-2 w-[50%] flex justify-end">
-          
+        <div className="py-2 px-2 w-[56%] flex justify-end">
           <Pagination
             isCompact
             showControls
             showShadow
-            width="100px"
-            color="primary"
             page={page}
+            size="sm"
             total={pages}
             onChange={setPage}
-          />
+          >
+            {(props) => (
+              <div
+                className={`${
+                  props.isActive ? 'bg-blue-500 text-white' : ''
+                } cursor-pointer py-1 px-2 m-1 rounded-sm`}
+                onClick={() => props.onClick(props.page)}
+              >
+                {props.page}
+              </div>
+            )}
+          </Pagination>
         </div>
-        <div className="hidden w-[47%] sm:flex justify-end gap-2 mr-10">
+        <div className="hidden w-[40%] sm:flex justify-end gap-2 mr-10">
           <Button
             isDisabled={pages === 1}
             size="sm"
@@ -469,7 +504,6 @@ const { onDownload } = useDownloadExcel({
   }, [selectedKeys, items.length, page, pages, hasSearchFilter]);
 
   
-
   const [data, setData] = React.useState();
   const [updopen, setupdopen] = React.useState(false);
   const updOpen = () => {
@@ -496,7 +530,7 @@ const { onDownload } = useDownloadExcel({
           <Addnewmodal onclose={handleAddNew} />
         </div>
       ) : (
-        <div>
+        <div className="">
           <Table
             ref={tableRef}
             aria-label="Example table with custom cells, pagination and sorting"
@@ -532,7 +566,7 @@ const { onDownload } = useDownloadExcel({
               className="bg-blue-800"
             >
               {(item) => (
-                <TableRow key={item.id} className="">
+                <TableRow key={item.id} className="border">
                   {(columnKey) => (
                     <TableCell>{renderCell(item, columnKey)}</TableCell>
                   )}
@@ -555,5 +589,3 @@ const { onDownload } = useDownloadExcel({
     </div>
   );
 }
-
-

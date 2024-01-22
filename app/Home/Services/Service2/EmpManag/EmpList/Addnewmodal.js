@@ -34,12 +34,12 @@ const AddEmpModal=({onclose})=>{
         <div className="flex flex-col md:flex md:flex-row">
         <button
         
-        className="bg-yellow-800  p-4 mb-5 w-auto mx-auto text-white rounded-md"
+        className="bg-green-500  p-4 mb-5 w-auto mx-auto text-white rounded-md"
         
         >
           Save</button> 
         <button
-        className="bg-black  p-4 mb-5 w-auto mx-auto text-white rounded-md"
+        className="bg-red-400  p-4 mb-5 w-auto mx-auto text-white rounded-md"
         onClick={onclose}   
         >
           Dismiss</button> 
