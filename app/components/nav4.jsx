@@ -59,7 +59,7 @@ const Navbar = () => {
         <Nav3 />
       </div>
 
-      {/* Brand Logo */}
+    
       <div className="w-1/2 flex items-center">
         <Link legacyBehavior href="/Home">
         <a className="group text-white text-2xl  font-bold font-sans transition-all duration-300 ease-in-out">
@@ -193,7 +193,7 @@ const Navbar = () => {
                   >
                     <Link legacyBehavior href="/Home/Profile/ChangePassword">
                     <a  
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      className="rounded-xl m-1 block px-4 py-2 hover:font-bold text-sm text-gray-700 hover:bg-gray-100 hover:text-[#274E75]"
                       role="menuitem"
                     >
                       Change Password
@@ -202,7 +202,7 @@ const Navbar = () => {
                     <Link legacyBehavior href="/">
                     <a
                     
-                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                      className="rounded-xl m-1 block px-4 py-2 hover:font-bold text-sm text-gray-700 hover:bg-gray-100 hover:text-[#274E75]"
                       role="menuitem"
                     >
                       LogOut
