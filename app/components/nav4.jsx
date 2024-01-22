@@ -63,7 +63,7 @@ const Navbar = () => {
       <div className="w-1/2 flex items-center">
         <Link legacyBehavior href="/Home">
         <a className="group text-white text-2xl  font-bold font-sans transition-all duration-300 ease-in-out">
-              <span class="bg-left-bottom bg-gradient-to-r from-[#4fbfa8] to-[#4fbfa8] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+              <span className="bg-left-bottom bg-gradient-to-r from-[#4fbfa8] to-[#4fbfa8] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
                 Im-Par
               </span> 
               
@@ -75,7 +75,7 @@ const Navbar = () => {
         <div className="hidden md:flex space-x-4">
           <Link legacyBehavior href="/Home">
             <a className="group text-white  transition-all duration-300 ease-in-out">
-              <span class="bg-left-bottom bg-gradient-to-r from-[#4fbfa8] to-[#4fbfa8] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+              <span className="bg-left-bottom bg-gradient-to-r from-[#4fbfa8] to-[#4fbfa8] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
                 Home 
               </span> 
               
@@ -87,7 +87,7 @@ const Navbar = () => {
               onClick={toggleServices}
               ref={r1}
             >
-              <span class="bg-left-bottom bg-gradient-to-r from-[#4fbfa8] to-[#4fbfa8] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+              <span className="bg-left-bottom bg-gradient-to-r from-[#4fbfa8] to-[#4fbfa8] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
                 Services 
               </span> 
               <svg
