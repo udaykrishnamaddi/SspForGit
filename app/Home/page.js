@@ -24,7 +24,7 @@ const Home = () => {
       <div className="grid sm:grid-cols-2">
         <div className="m-4 flex items-center justify-center">
           <div>
-            <p className="text-green-700 sm:text-4xl font-sans lg:text-5xl text-2xl">
+            <p className="text-[#4fbfa8] sm:text-4xl font-sans lg:text-5xl text-2xl">
               Hi Mohan Krishna!
             </p>
             <p className="sm:text-2xl lg:text-3xl text-xl font-sans">

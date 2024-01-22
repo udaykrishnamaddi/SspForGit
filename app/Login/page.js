@@ -21,19 +21,19 @@ const Login = () => {
     console.log('Submitting:', { email, password });
 
   };
-
+  // bg-[url("/loginPageImages/loginbg.png")] 
   return (
     <div className='bg-[#274e7f] h-full w-full'>
-    <div className='flex justify-center items-center bg-[url("/loginPageImages/loginbg.png")]  bg-cover h-screen g-center bg-repeat-y'>
+    <div className='flex justify-center items-center  bg-cover h-screen g-center bg-repeat-y'>
         <div className="w-[60%]  text-gray-900 flex justify-center">
-        <div className="sm:m-10 bg-white shadow sm:rounded-lg flex justify-center flex-1">
+        <div className="sm:m-6 bg-white shadow sm:rounded-lg flex justify-center flex-1">
             <div className="lg:w-1/2 xl:w-[45%] p-6 sm:p-2 mb-4">
                 <div>
                     <img src="/loginPageImages/WhatsApp Image 2024-01-10 at 11.05.13.jpeg"
-                        className="w-mx-auto pt-4" />
+                        className="w-mx-auto pt-5" />
                 </div>
                   <div className="mt-12 flex flex-col items-center">
-                    <div className="w-full flex-1 mt-8">
+                    <div className="w-full flex-1 mt-6">
 
                         <div className="mx-auto max-w-xs">
 
@@ -58,7 +58,7 @@ const Login = () => {
 
                             <Link href="/Home">
                             <button
-                                className="mt-5 tracking-wide font-semibold bg-green-400 text-white-500 w-full py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                                className="mt-5 tracking-wide font-semibold bg-[#4fbfa8] text-white-500 w-full py-4 rounded-lg hover:bg-green-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                                   <span className="ml-">
                                       Log In
                                   </span>
