@@ -83,11 +83,13 @@ const Navbar = () => {
           </Link>
           <Link legacyBehavior href="#">
             <a
-              className="text-white relative flex"
+              className="group text-white relative flex transition-all duration-300 ease-in-out"
               onClick={toggleServices}
               ref={r1}
             >
-              Services 
+              <span class="bg-left-bottom bg-gradient-to-r from-[#4fbfa8] to-[#4fbfa8] bg-[length:0%_2px] bg-no-repeat group-hover:bg-[length:100%_2px] transition-all duration-500 ease-out">
+                Services 
+              </span> 
               <svg
                 className={`w-3 h-3 mt-2 ml-1 transform ${services ? 'rotate-180' : 'rotate-0'} transition-transform`}
                 fill="none"
